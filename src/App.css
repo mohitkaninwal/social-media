@@ -1,11 +1,21 @@
-.app-container{
-  display:flex;
-
+.app-container {
+  display: flex;
 }
 
-.content{
+.content {
   width: 100%;
 }
-.sidebar{
+.sidebar {
   min-height: 800px;
+}
+.post-card {
+  margin: 20px 50px;
+  min-width: 30rem;
+}
+.like-button {
+  margin: 10px 18px;
+}
+
+.delete-icon{
+  float: right;
 }
