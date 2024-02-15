@@ -65,11 +65,11 @@ const DEFAULT_POST_LIST = [
   },
   {
     id: "2",
-    title: "Pass out",
-    body: "Hi, Friends I finally graduated, hard to believe!",
+    title: "Mohit Kumar",
+    body: "Hi,My name is Mohit and currently pursuing my BTech degree from GJU, Hisar. I specialise in JavaScript, Reactjs, Redux, MaterialUI and C++. Currently working on this project." ,
     reactions: 12,
     userId: "user-1",
-    tags: ["Btech", "pass"],
+    tags: ["Btech", "8thSem"],
   },
 ];
 
