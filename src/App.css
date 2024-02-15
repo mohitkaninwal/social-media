@@ -16,6 +16,11 @@
   margin: 10px 18px;
 }
 
-.delete-icon{
+.delete-icon {
   float: right;
+}
+.create-post {
+  margin-top: 50px;
+  margin-left: 50px;
+  width: 80%;
 }

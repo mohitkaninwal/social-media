@@ -29,7 +29,7 @@ export default function Post({ post }) {
   return (
     <Card className="post-card" sx={{ maxWidth: 345 }}>
       <CardContent>
-        <MdDelete className="delete-icon" onClick={()=> deletePost(PostId)} />
+        <MdDelete className="delete-icon" onClick={()=> deletePost(post.id)} />
         <Typography gutterBottom variant="h5" component="div">
           {post.title}
         </Typography>
