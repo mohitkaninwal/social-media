@@ -4,12 +4,13 @@
 
 .content {
   width: 100%;
+  background-color: rgb(224, 227, 228);
 }
 .sidebar {
-  min-height: 800px;
+  min-height: 600px;
 }
 .post-card {
-  margin: 20px 50px;
+  margin: 30px 100px;
   min-width: 30rem;
 }
 .like-button {
@@ -22,5 +23,11 @@
 .create-post {
   margin-top: 50px;
   margin-left: 50px;
-  width: 80%;
+  width: 50%;
+}
+.right-sidebar {
+  float: right;
+}
+.right-sidebar-msg {
+  min-height: 430px;
 }

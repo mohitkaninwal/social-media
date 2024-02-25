@@ -14,14 +14,6 @@ const WelcomeMessage = ({ onGetPostsClick }) => {
   return (
     <RootContainer>
       <Typography variant="h6">No posts to display at the moment.</Typography>
-
-      <Box mt={2}>
-        {" "}
-        {/* Apply margin top */}
-        <ButtonGroup variant="outlined" aria-label="Loading button group">
-          <Button onClick={onGetPostsClick}>Fetch Posts</Button>
-        </ButtonGroup>
-      </Box>
     </RootContainer>
   );
 };

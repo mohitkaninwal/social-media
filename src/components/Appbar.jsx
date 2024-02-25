@@ -15,6 +15,8 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
+import RightSidebar from "./RightSidebar";
+import { useState } from "react";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -57,6 +59,15 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function Appbar() {
+  const [showMessages, setShowMessages] = useState(false);
+
+  const handleMessageBtnClick = () => {
+    // console.log('message icon clicked')
+    // setShowMessages(!showMessages);
+    alert('Working on Adding Features')
+  };
+  
+  
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -155,7 +166,7 @@ export default function Appbar() {
   );
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1 }} >
       <AppBar position="static">
         <Toolbar>
           <IconButton
@@ -188,6 +199,7 @@ export default function Appbar() {
               size="large"
               aria-label="show 4 new mails"
               color="inherit"
+              onClick={handleMessageBtnClick}
             >
               <Badge badgeContent={4} color="error">
                 <MailIcon />

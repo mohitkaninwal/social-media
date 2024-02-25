@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useReducer } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
@@ -8,28 +8,39 @@ import Badge from "@mui/material/Badge";
 import { MdDelete } from "react-icons/md";
 import { useContext } from "react";
 import { PostList } from "../store/post-list-store";
-import { useState } from "react";
 
+// Reducer function to manage like state and count
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "TOGGLE_LIKE":
+      return {
+        ...state,
+        likeEnabled: !state.likeEnabled,
+        likeCount: state.likeEnabled ? state.likeCount - 1 : state.likeCount + 1
+      };
+    default:
+      return state;
+  }
+};
 
 export default function Post({ post }) {
   const { deletePost } = useContext(PostList);
-  
-  const [likeEnabled, setLikeEnabled] = useState(false);
-  const [likeCount, setLikeCount] = useState(post.reactions);
+
+  const initialState = {
+    likeEnabled: false,
+    likeCount: post.reactions
+  };
+
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   const handleLikeToggle = () => {
-    setLikeEnabled(!likeEnabled);
-    if (!likeEnabled) {
-      setLikeCount(likeCount + 1);
-    } else {
-      setLikeCount(likeCount - 1);
-    }
+    dispatch({ type: "TOGGLE_LIKE" });
   };
 
   return (
     <Card className="post-card" sx={{ maxWidth: 345 }}>
       <CardContent>
-        <MdDelete className="delete-icon" onClick={()=> deletePost(post.id)} />
+        <MdDelete className="delete-icon" onClick={() => deletePost(post.id)} />
         <Typography gutterBottom variant="h5" component="div">
           {post.title}
         </Typography>
@@ -48,13 +59,12 @@ export default function Post({ post }) {
       <CardActions>
         <Badge
           color="error"
-          badgeContent={post.reactions}
+          badgeContent={state.likeCount} // Update badgeContent with likeCount from state
           className="like-button"
         >
           <Fab
-            
             size="small"
-            color={likeEnabled ? "error" : "default"}
+            color={state.likeEnabled ? "error" : "default"} // Use likeEnabled from state
             aria-label="like"
             onClick={handleLikeToggle}
           >
@@ -78,3 +88,4 @@ export default function Post({ post }) {
     </Card>
   );
 }
+
