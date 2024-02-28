@@ -13,6 +13,12 @@ import RightSidebar from "./components/RightSidebar";
 
 function App() {
   const [selectedTab, setSelectedTab] = useState("Home");
+  const [showMessage, setShowMessage] = useState(false);
+
+  const handleMessageBtnClick = () => {
+    console.log("message icon clicked in app");
+    setShowMessage(!showMessage);
+  };
 
   return (
     <PostListProvider>
@@ -20,8 +26,10 @@ function App() {
         <Sidebar selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
 
         <div className="content">
-          <Appbar />
-          {/* <div className='right-sidebar'> <RightSidebar /></div> */}
+          <Appbar onMessageBtnClick={handleMessageBtnClick} />
+          <div className="right-sidebar">
+            {!showMessage && <RightSidebar />}
+          </div>
           {selectedTab === "Home" ? <Postlist /> : <Createpost />}
           <Footer></Footer>
         </div>

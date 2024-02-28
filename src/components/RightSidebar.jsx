@@ -10,7 +10,7 @@ import Typography from "@mui/material/Typography";
 export default function RightSidebar() {
   return (
     <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }} className ='right-sidebar-msg'>
-      <ListItem alignItems="flex-start">
+      <ListItem alignItems="flex-start" position ='fixed'>
         <ListItemAvatar>
           <Avatar alt="Mohit" src="/static/images/avatar/1.jpg" />
         </ListItemAvatar>

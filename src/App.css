@@ -1,5 +1,6 @@
 .app-container {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .content {
@@ -7,11 +8,15 @@
   background-color: rgb(224, 227, 228);
 }
 .sidebar {
+  position: fixed;
+  margin-top: 62px;
   min-height: 600px;
 }
 .post-card {
-  margin: 30px 100px;
-  min-width: 30rem;
+  margin-top: 90px;
+  margin-bottom: 0px;
+  margin-left: 275px;
+  min-width: 35rem;
 }
 .like-button {
   margin: 10px 18px;
@@ -21,13 +26,18 @@
   float: right;
 }
 .create-post {
-  margin-top: 50px;
-  margin-left: 50px;
-  width: 50%;
+  margin-top: 90px;
+  width: 45%;
+  margin-left: 275px;
 }
 .right-sidebar {
-  float: right;
+  position: fixed;
+  top: 64px;
+  right: 2px;
+  
 }
 .right-sidebar-msg {
   min-height: 430px;
 }
+
+

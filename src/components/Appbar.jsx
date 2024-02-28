@@ -59,14 +59,17 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function Appbar() {
-  const [showMessages, setShowMessages] = useState(false);
+  const [showMessage, setShowMessage] = useState(false);
 
   const handleMessageBtnClick = () => {
-    // console.log('message icon clicked')
-    // setShowMessages(!showMessages);
-    alert('Working on Adding Features')
+     console.log('message icon clicked')
+    setShowMessage(!showMessage);
+   {showMessage && <RightSidebar />}
   };
   
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -131,8 +134,8 @@ export default function Appbar() {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="error">
+        <IconButton size="large" aria-label="show 4 new mails" color="inherit" >
+          <Badge >
             <MailIcon />
           </Badge>
         </IconButton>
@@ -140,6 +143,8 @@ export default function Appbar() {
       </MenuItem>
       <MenuItem>
         <IconButton
+        onClick={handleOpen}
+        open={open}
           size="large"
           aria-label="show 17 new notifications"
           color="inherit"
@@ -147,7 +152,7 @@ export default function Appbar() {
           <Badge badgeContent={17} color="error">
             <NotificationsIcon />
           </Badge>
-        </IconButton>
+        </IconButton  >
         <p>Notifications</p>
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
@@ -167,7 +172,7 @@ export default function Appbar() {
 
   return (
     <Box sx={{ flexGrow: 1 }} >
-      <AppBar position="static">
+      <AppBar position="fixed">
         <Toolbar>
           <IconButton
             size="large"
