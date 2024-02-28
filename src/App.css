@@ -1,16 +1,22 @@
 .app-container {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .content {
   width: 100%;
+  background-color: rgb(224, 227, 228);
 }
 .sidebar {
-  min-height: 800px;
+  position: fixed;
+  margin-top: 62px;
+  min-height: 600px;
 }
 .post-card {
-  margin: 20px 50px;
-  min-width: 30rem;
+  margin-top: 90px;
+  margin-bottom: 0px;
+  margin-left: 275px;
+  min-width: 35rem;
 }
 .like-button {
   margin: 10px 18px;
@@ -20,7 +26,18 @@
   float: right;
 }
 .create-post {
-  margin-top: 50px;
-  margin-left: 50px;
-  width: 80%;
+  margin-top: 90px;
+  width: 45%;
+  margin-left: 275px;
 }
+.right-sidebar {
+  position: fixed;
+  top: 64px;
+  right: 2px;
+  
+}
+.right-sidebar-msg {
+  min-height: 430px;
+}
+
+
