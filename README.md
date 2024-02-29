@@ -6,8 +6,9 @@
 This is a simple social media app created using React, Material UI, and Vite. The app allows users to create,like and delete posts. Please note that this app is currently under development, and several features are not yet implemented.
 
 ## Preview
-<img width="650px" src="https://github.com/mohitkaninwal/social-media/assets/89794081/be32c05b-e3f1-49d2-80af-be5515b973c4"/>
-<img width="650px" src="https://github.com/mohitkaninwal/social-media/assets/89794081/239eb272-c91b-4d5f-b2d9-52f26d116dc0"/>
+<img width="650px" src="https://github.com/mohitkaninwal/social-media/assets/89794081/06349b88-9047-4b78-b59c-7d43b0987405"/>
+
+
 
 ## Features
 
@@ -20,6 +21,7 @@ This is a simple social media app created using React, Material UI, and Vite. Th
 - React
 - Material UI
 - Vite
+- DummyJSON
 
 ## Installation
 
